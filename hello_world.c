@@ -1,4 +1,6 @@
-#include <stdio.h>
+/* Вывод текстового сообщения "Hello World" */
+
+#include <stdio.h>      // включение модуля standard input output, импорт функции printf()
 
 int main(void)
 {
