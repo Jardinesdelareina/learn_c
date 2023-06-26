@@ -52,7 +52,6 @@
 |<b>%f</b>, <b>%e</b>, <b>%g</b>, <b>%F</b>, <b>%E</b>, <b>%G</b>|Вещественное число (приводится к float)|
 |<b>%c</b>|Символ в соответствии с текущей кодовой таблицей (приводится к char)|
 |<b>%s</b>|Строка, читается до первого пробела, перевода строки или табуляции|
-
 |h|%hd, %hi - для short int, %hx, %ho, hu - для unsigned short|
 |hh|%hhd - lkz signed char, %hhu - для unsigned char|
 |l|%ld, %li - для long int, %lf, %lg, %le -для double|
