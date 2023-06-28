@@ -1,6 +1,6 @@
 # Язык программирования C
 
-### Установка
+### Установка в Windows
 
 ##### Компилятор gcc GNU Compiler Collection
 
@@ -12,6 +12,10 @@
 > gcc hello_world.c
 
 > .\a
+
+Чтобы задать свое имя исполняемому файлу:
+
+> gcc hello_world.c -o hw
 
 ##### Расширения для VS Code:
 * <b>C/C++</b>
