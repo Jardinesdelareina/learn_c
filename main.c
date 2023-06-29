@@ -2,18 +2,25 @@
 
 int main(void)
 {
-    int num;
-    if (scanf("%d", &num) != 1) {
+    char symbol;
+    if (scanf("%c", &symbol) != 1) {
         printf("Error");
-        return 0;
     }
-    if (num > 1) {
-        
-        /* if (num % 2 == 0) printf("Even");
-        else printf("Not even");*/
 
-        printf((num % 2 == 0) ? "Even" : "Not even");       // Условное тернарное выражение
+    // break - выход из цикла switch case, 
+    // return 0 - выход из программы
+    switch(symbol) {
+        case 'a':
+        case 'A':
+            printf("Symbol A\n");
+            break;
+        case 'b':
+        case 'B':
+            printf("Symbol B\n");
+            break;
+        default:
+            printf("Any symbol\n");
     }
-    else printf("Input number: %d", num);
+
     return 0;
 }
