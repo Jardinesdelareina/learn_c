@@ -1,5 +1,7 @@
 # Язык программирования C
 
+<em>Данный репозиторий является конспектом [лекций Сергея Балакирева по языку C](https://www.youtube.com/playlist?list=PLA0M1Bcd0w8w-mqVmBjt-2J8Z1gVmPZVz)</em>
+
 ### Установка в Windows
 
 ##### Компилятор gcc GNU Compiler Collection
