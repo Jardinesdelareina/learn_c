@@ -1,7 +1,7 @@
-#include "printf.h"
+#include "src/printf.h"
 
 int main(void) 
 {
-    printf("Hello\n")
+    printf("Hello\n");
     return 0;
 }
