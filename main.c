@@ -1,7 +1,18 @@
-#include "src/printf.h"
+#define LANGUAGE_C
 
-int main(void) 
+#ifdef LANGUAGE_C
+#   include <stdio.h>
+#else
+#   include "src/printf.h"
+#endif
+
+int main(void)
 {
-    printf("Hello\n");
+    char *var = "Hello LANGUAGE_C";
+#ifdef LANGUAGE_C
+    printf("%s\n", var);
+#else
+    printf('Unknown language')
+#endif
     return 0;
 }
