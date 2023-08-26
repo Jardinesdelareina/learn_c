@@ -2,7 +2,14 @@
 
 int main(void)
 {
-    for(int num = 0, target = 1000; num < target; ++num)
-        printf("%d\n", num);
+    int num = 100;
+    int enter_num;
+
+    do {
+        printf("Enter number: ");
+        scanf("%d", &enter_num);
+    } while (num != enter_num);
+
+    printf("Access input");
     return 0;
 }
