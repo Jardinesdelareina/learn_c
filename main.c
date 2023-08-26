@@ -1,18 +1,11 @@
-#define LANGUAGE_C
-
-#ifdef LANGUAGE_C
-#   include <stdio.h>
-#else
-#   include "src/printf.h"
-#endif
+#include <stdio.h>
 
 int main(void)
 {
-    char *var = "Hello LANGUAGE_C";
-#ifdef LANGUAGE_C
-    printf("%s\n", var);
-#else
-    printf('Unknown language')
-#endif
+    int num = 0;
+    int target = 1000;
+
+    while(++num < target)
+        printf("%d\n", num);
     return 0;
 }
