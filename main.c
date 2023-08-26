@@ -2,10 +2,7 @@
 
 int main(void)
 {
-    int num = 0;
-    int target = 1000;
-
-    while(++num < target)
+    for(int num = 0, target = 1000; num < target; ++num)
         printf("%d\n", num);
     return 0;
 }
