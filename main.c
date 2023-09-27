@@ -3,28 +3,31 @@
 
 int main(void) 
 {
-    char string_1[100] = "Copying array";
-    char string_2[10];
+    char str_1[12] = "Example";
+    char str_2[10] = "Example";
 
-    // Копирование массива strcpy() и strncpy()
-    
-    //strcpy(string_2, string_1);
-    //puts(string_2);
+    /* const char *string_1 = str_1;
+    const char *string_2 = str_2;
 
-    int max_lenth = sizeof(string_2) - 1;
-    strncpy(string_2, string_1, max_lenth);
-    string_2[max_lenth] = '\0';
-    //puts(string_2);
+    int count = 0;
+    for(; string_1[count] != '\0' && string_2[count] != '\0'; ++count)
+        if (string_1[count] != string_2[count]) {
+            puts("Strings are not equal");
+            return 0;
+        }
+    if (string_1[count] != string_2[count]) {
+        puts("Strings lengths are not equal");
+        return 0;
+    }
 
-    // Измерение размера массива strlen()
-    size_t len = strlen(string_2);
-    //printf("%d", len);
+    puts("Strings are equal"); */
 
-    // Соединение строк strcat()
-    char name[50] = "Andrey";
-    char last_name[50] = "Kostyuk";
-    strcat(name, last_name);
-    puts(name);
+    // Сравнение массивов strcmp()
+    int result = strcmp(str_1, str_2);
+    if (result == 0)
+        puts("Strings are equal");
+    else
+        puts("Strings are not equal");
 
     return 0;
 }
