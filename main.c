@@ -1,15 +1,18 @@
 #include <stdio.h>
 #include <string.h>
 
+int get_p(int width, int height)
+{
+    int p = 2 * (width + height);
+    printf("Perimetr = %d", p);
+    return 0;
+}
+
+
 int main(void) 
 {
-    const char* strings[] = {
-        "Ship", "Shopping", "Shematic", "Super", "Sherif"
-    };
-
-    for(int i = 0; i < sizeof(strings) / sizeof(*strings); ++i)
-        if (strncmp(strings[i], "Sh", 2) == 0)
-            puts(strings[i]);
-
+    int num_1 = 30;
+    int num_2 = 40;
+    get_p(num_1, num_2);
     return 0;
 }
