@@ -1,4 +1,8 @@
-# Язык программирования C
+# Язык программирования C 
+
+<div>
+    <img src="https://github.com/devicons/devicon/blob/master/icons/c/c-original.svg" width="40" height="40"/>&nbsp;
+</div>
 
 <em>Данный репозиторий является конспектом [лекций Сергея Балакирева по языку C](https://www.youtube.com/playlist?list=PLA0M1Bcd0w8w-mqVmBjt-2J8Z1gVmPZVz)</em>
 
