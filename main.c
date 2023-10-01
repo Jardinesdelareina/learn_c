@@ -1,16 +1,19 @@
 #include <stdio.h>
 
-void get_pointers(int* one, int* two)
-{
-    int three = *one;
-    *one = *two;
-    *two = three;
-}
-
 int main(void)
 {
-    int num_1 = 1, num_2 = 2;
-    get_pointers(&num_1, & num_2);
-    printf("num_1 = %d\nnum_2 = %d", num_1, num_2);
+    int num = 31;               // Создание переменной
+    int *pointer_num = &num;    // Инициализация указателя на эту переменную
+
+    printf("pointer_num: %p\n*pointer_num: %d\nnum: %d\n", pointer_num, *pointer_num, num);
+
+    *pointer_num = 41;          // Занесение в ячейку памяти нового значения
+
+    printf("pointer_num: %p\n*pointer_num: %d\nnum: %d\n", pointer_num, *pointer_num, num);
+    
+    /* 
+    Значение в ячейке памяти поменялось, но сама ячейка памяти pointer_num (указатель на адрес num)
+    осталась неизменной 
+    */
     return 0;
 }
