@@ -1,22 +1,16 @@
 #include <stdio.h>
 
-const char* find_space(const char* str)
+int square(int w, int h)
 {
-    /* 
-        Перебирает посимвольно то, что пришло в аргументах до конца (до симвода \0),
-        находит символ пробела и возвращает указатель на него.
-    */
-    while(*str != '\0') {
-        if(*str == ' ')
-            return str;
-        str++;
-    }
+    return w * h;
 }
 
 int main(void)
 {
-    char string[] = "Learning C";
-    const char* res = find_space(string);
-    printf("Space address: %p", res);
+    /* Указатель на функцию: Тип (указатель) (типы аргументов функции) */
+    int (*ptr) (int, int);
+    ptr = square;
+    int result = ptr(10, 12);
+    printf("Square: %d", result);
     return 0;
 }
