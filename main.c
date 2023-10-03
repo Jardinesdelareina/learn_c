@@ -1,22 +1,22 @@
 #include <stdio.h>
 
-int sum_array(const int*array, int length)
+const char* find_space(const char* str)
 {
-    /* Перебирает элементы области памяти и вычисляет их сумму */
-    int result = 0;
-    for(int el = 0; el < length; ++el)
-        result += array[el];
-    return result;
+    /* 
+        Перебирает посимвольно то, что пришло в аргументах до конца (до симвода \0),
+        находит символ пробела и возвращает указатель на него.
+    */
+    while(*str != '\0') {
+        if(*str == ' ')
+            return str;
+        str++;
+    }
 }
 
 int main(void)
 {
-    int any_array[] = {4, 3, 55, -6};
-
-    // Расчет количества элементов в области памяти
-    int count_element = sizeof(any_array) / sizeof(*any_array);
-    int value = sum_array(any_array, count_element);
-
-    printf("Sum array: %d", value);
+    char string[] = "Learning C";
+    const char* res = find_space(string);
+    printf("Space address: %p", res);
     return 0;
 }
