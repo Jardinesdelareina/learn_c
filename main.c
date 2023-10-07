@@ -1,17 +1,30 @@
 #include <stdio.h>
 #include <stdlib.h>
 
+enum cex
+{
+    binance=3000,
+    bybit=100,
+    huobi=0
+};
+
 int main(void)
 {
-    /* Выделение памяти для переменной */
-    char *var_1 = malloc(10);
-    int *var_2 = malloc(sizeof(int));
-    short *var_3 = malloc(10 * sizeof(short));
+    printf("Binance: %d\nBybit: %d\nHuobi: %d\n", binance, bybit, huobi);
 
-    /* Освоождение памяти */
-    free(var_1);
-    free(var_2);
-    free(var_3);
+    // enum выступает как тип переменной
+    enum cex enum_balance = binance;
+    switch(enum_balance) {
+        case binance:
+            puts("Binance");
+            break;
+        case bybit:
+            puts("Bybit");
+            break;
+        case huobi:
+            puts("Huobi");
+            break;
+    }
 
     return 0;
 }
