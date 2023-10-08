@@ -1,30 +1,17 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-enum cex
+typedef enum 
 {
     binance=3000,
     bybit=100,
     huobi=0
-};
+} VARIABLE;
 
 int main(void)
 {
+    VARIABLE balance_bybit = bybit;
     printf("Binance: %d\nBybit: %d\nHuobi: %d\n", binance, bybit, huobi);
-
-    // enum выступает как тип переменной
-    enum cex enum_balance = binance;
-    switch(enum_balance) {
-        case binance:
-            puts("Binance");
-            break;
-        case bybit:
-            puts("Bybit");
-            break;
-        case huobi:
-            puts("Huobi");
-            break;
-    }
 
     return 0;
 }
