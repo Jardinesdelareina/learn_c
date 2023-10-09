@@ -1,83 +1,46 @@
 #include <stdio.h>
-#include <stdlib.h>
 
-/* 
-    Основные операции со стеком: 
-    - добавление элемента в верхушку (push), 
-    - удаление элемента из верхушки (pop), 
-    - отображение содержимого стека (show) 
-*/
+typedef enum {
+    union_none,
+    union_char,
+    union_int,
+    union_double
+} TYPE_VAR;
 
+union var_item {
+    char var_char;
+    int var_int;
+    double var_double;
+};
 
-typedef struct tag_obj {
-    /* 
-        Структура, где поле `data` - для хранения данных и поле `next` для указания на следующий элемент стека 
-    */
-    int data;
-    struct tag_obj* next;
-} OBJ;
+typedef struct {
+    union var_item var;
+    TYPE_VAR type;
+} VAR;
 
-OBJ* push(OBJ* top, int data)
+void (show_var(VAR v))
 {
-    /* 
-        Добавляет новый элемент в верхушку стека. Функция выделяет память для нового элемента, 
-        устанавливает его значение `data` и указывает на предыдущий верхний элемент стека через поле `next`. 
-        Возвращает указатель на новый элемент, который теперь становится верхушкой стека. 
-    */
-    OBJ* ptr = malloc(sizeof(OBJ));
-    ptr->data = data;
-    ptr->next = top;
-    return ptr;
-}
-
-OBJ* pop(OBJ* top)
-{
-    /* 
-        Удаляет элемент из верхушки стека. Если стек пустой (`top == NULL`), то возвращает нулевой указатель. 
-        Если стек не пустой, то выводит значение элемента на экран, сохраняет указатель на следующий элемент, 
-        освобождает память, выделенную для текущего элемента, и возвращает указатель на следующий элемент, 
-        который становится новой верхушкой стека.
-     */
-    if(top == NULL)
-        return top;
-
-    printf("DELETED: %d\n", top->data);
-    OBJ* ptr_next = top->next;
-    free(top);
-    return ptr_next;
-}
-
-void show(const OBJ* top)
-{
-    /* 
-        Выводит значения всех элементов стека, начиная с верхушки, 
-        путем прохода по связанному списку с помощью указателя `current`.
-    */
-    const OBJ* current = top;
-    while(current != NULL) {
-        printf("%d\n", current->data);
-        current = current->next;
+    switch(v.type) {
+        case union_char:
+            printf("var_char: %c\n", v.var.var_char);
+            break;
+        case union_int:
+            printf("var_int: %d\n", v.var.var_int);
+            break;
+        case union_double:
+            printf("var_double: %.2f\n", v.var.var_double);
+            break;
+        case union_none:
+            puts("Undefined type");
     }
 }
 
 int main(void)
 {
-    /* 
-        Создается пустой стек и затем элементы добавляются в стек с помощью функции `push()`. 
-        После этого вызывается функция `show()`, чтобы вывести значения всех элементов стека. 
-        Затем с помощью цикла while весь стек очищается, вызывая функцию `pop()`, пока стек не станет пустым.
-    */
-    OBJ* top = NULL;
+    VAR var;
+    var.var.var_char = 'C';
+    var.type = union_char;
 
-    top = push(top, 1);
-    top = push(top, 2);
-    top = push(top, 3);
-    top = push(top, 4);
-
-    show(top);
-
-    while(top)
-        top = pop(top);
-
+    show_var(var);
     return 0;
 }
