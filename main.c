@@ -1,24 +1,23 @@
 #include <stdio.h>
+#include <assert.h>
 
-#define MAX_LENGTH 100
-
-int main(void)
+float fahr(int cel)
 {
-    char string[] = "Learning C language";
+    return cel * 1.8 + 32;
+}
 
-    // Запись данных в файл
-    FILE* file_write = fopen("new_file.txt", "w");
-    if(file_write) {
-        fputs(string, file_write);
-        fclose(file_write);
-    }
 
-    // Чтение данных из файла
-    FILE* file_read = fopen("new_file.txt", "r");
-    if(file_read) {
-        fgetc(file_read);
-        fclose(file_read);
-    }
+int main()
+{
+    int cel;
+    float f;
 
+    assert(32 == fahr(0));
+    assert(122 == fahr(50));
+    assert(-40 == fahr(-40));
+    assert(33.8 == fahr(1));
+
+    scanf("%d", &cel);
+    printf("%.2f", fahr(cel));
     return 0;
 }
