@@ -4,7 +4,7 @@
     <img src="https://github.com/devicons/devicon/blob/master/icons/c/c-original.svg" width="40" height="40"/>&nbsp;
 </div>
 
-<em>Данный репозиторий является конспектом [лекций Сергея Балакирева по языку C](https://www.youtube.com/playlist?list=PLA0M1Bcd0w8w-mqVmBjt-2J8Z1gVmPZVz)</em>
+<em>Данный репозиторий является конспектом [лекций Сергея Балакирева по языку C](https://www.youtube.com/playlist?list=PLA0M1Bcd0w8w-mqVmBjt-2J8Z1gVmPZVz) и [курса по языку C для студентов МФТИ Татьяны Дербышевой и Татьяны Овсянниковой](https://stepik.org/course/57680/info).</em>
 
 ### Установка в Windows
 
@@ -13,15 +13,30 @@
 Программа-установщик компилятора <b>minGW</b>
 (Добавить в Path путь C:\MinGW\bin)
 
-Для запуска программы на C в PowerShell ввести:
+### Установка в Linux
 
-> gcc hello_world.c
+`sudo apt update`   - обновление пакетов Linux
+`sudo apt install cmake gcc clang gdb build-essential`  - установка:
+    * <b>cmake</b> - инструмент для автоматизации процесса сборки программного обеспечения
+    * <b>gcc</b> - компилятор языка C
+    * <b>clang</b> - альтернативный компилятор C
+    * <b>gdb</b> - отладчик для программ
+    * <b>build-essential</b> - инструмент для автоматизации процесса сборки программного обеспечения
+`sudo apt install valgrind`     - установка утилиты для отладки и обнаружения ошибок
+
+
+Для запуска программы на C в PowerShell или bash ввести:
+
+> gcc -Wall -Wextra hello_world.c
 
 > .\a
 
 Чтобы задать свое имя исполняемому файлу:
 
-> gcc hello_world.c -o hw
+> gcc -Wall -Wextra hello_world.c -o hw
+
+* `-Wall` включает всестандартные предупреждения компилятора (предупреждения о неиспользуемых переменных, некорректных вызовах функций и тд.)
+* `-Wextra` включает дополнительные предупреждения (предупреждения о неиспользуемых аргументах функций, несоответствие типов указателей и тд.)
 
 ##### Расширения для VS Code:
 * <b>C/C++</b>
