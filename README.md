@@ -18,6 +18,7 @@
 `sudo apt update`   - обновление пакетов Linux
 
 `sudo apt install cmake gcc clang gdb build-essential`  - установка:
+
     * <b>cmake</b> - инструмент для автоматизации процесса сборки программного обеспечения
     * <b>gcc</b> - компилятор языка C
     * <b>clang</b> - альтернативный компилятор C
