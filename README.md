@@ -8,7 +8,7 @@
 
 ### Установка в Windows
 
-##### Компилятор gcc GNU Compiler Collection
+##### Компилятор gcc (GNU Compiler Collection)
 
 Программа-установщик компилятора <b>minGW</b>
 (Добавить в Path путь C:\MinGW\bin)
