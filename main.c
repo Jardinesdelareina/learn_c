@@ -1,20 +1,28 @@
 #include <stdio.h>
-#include <time.h>
 
-int main()
+int main(void)
 {
-    clock_t start_time, end_time;
-    double total_time;
+    int gold = 10;
+    int hp_g = 100;
+    int kick = 30;
+    char attack;
 
-    start_time = clock();
-
-    for(int i = 0, target = 1000000; i < target; ++i)
-        printf("%d\n", i);
-
-    end_time = clock();
-    total_time = (double) (end_time - start_time) / CLOCKS_PER_SEC;
-
-    printf("Time: %.2f second\n", total_time);
+    printf("Вы атакованы гоблином! Гоблин: %d\n", hp_g);
+    attack = getchar();
+    while(attack != 'r') {
+        if(attack == 'a') {
+            puts("Вы атакуете гоблина!");
+        hp_g -= kick;
+        printf("Гоблин: %d\n", hp_g);
+        }
+        if(hp_g < 0) {
+            puts("Вы убили гоблина!");
+            printf("Вы получили %d золота\n", gold);
+            break;
+        }
+        getchar();
+        attack = getchar();
+    }
 
     return 0;
 }
