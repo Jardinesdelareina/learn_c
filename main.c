@@ -3,8 +3,10 @@
 
 int main(void)
 {
-    char text[] = "bfiuv";
-    int len = strlen(text);
-    printf("%d\n", len);
+    char nickname[8];
+
+    puts("What is your name?\n");
+    scanf("%s", nickname);
+    printf("Your name is %s!\n", nickname);
     return 0;
 }
