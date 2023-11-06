@@ -1,12 +1,23 @@
 #include <stdio.h>
-#include <string.h>
+#include <curl/curl.h>
 
 int main(void)
 {
-    char nickname[8];
+  CURL *curl;
+  CURLcode res;
 
-    puts("What is your name?\n");
-    scanf("%s", nickname);
-    printf("Your name is %s!\n", nickname);
-    return 0;
+  curl = curl_easy_init();
+  if (curl)
+  {
+    curl_easy_setopt(curl, CURLOPT_URL, "https://api.mexc.com/api/v3/time");
+
+    res = curl_easy_perform(curl);
+    if (res != CURLE_OK)
+      fprintf(stderr, "curl_easy_perform() failed: %s\n", curl_easy_strerror(res));
+
+    printf("%c\n", res);
+
+    curl_easy_cleanup(curl);
+  }
+  return 0;
 }
