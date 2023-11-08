@@ -4,7 +4,7 @@
     <img src="https://github.com/devicons/devicon/blob/master/icons/c/c-original.svg" width="40" height="40"/>&nbsp;
 </div>
 
-<em>Данный репозиторий является конспектом [лекций Сергея Балакирева по языку C](https://www.youtube.com/playlist?list=PLA0M1Bcd0w8w-mqVmBjt-2J8Z1gVmPZVz) и [курса по языку C для студентов МФТИ Татьяны Дербышевой и Татьяны Овсянниковой](https://stepik.org/course/57680/info).</em>
+<em>Данный репозиторий является конспектом [лекций Сергея Балакирева по языку C](https://www.youtube.com/playlist?list=PLA0M1Bcd0w8w-mqVmBjt-2J8Z1gVmPZVz).</em>
 
 ### Установка в Windows
 
@@ -35,10 +35,12 @@
 
 Чтобы задать свое имя исполняемому файлу:
 
-> gcc -Wall -Wextra main.c -o main
+> gcc main.c -o main -Wall -Wextra -std=c99 -pedantic
 
 * `-Wall` включает все стандартные предупреждения компилятора (предупреждения о неиспользуемых переменных, некорректных вызовах функций и тд.)
 * `-Wextra` включает дополнительные предупреждения (предупреждения о неиспользуемых аргументах функций, несоответствие типов указателей и тд.)
+* `-std=c99` указывает стандарт языка C
+* `-pedantic` активирует проверку на соответствие стандарту языка C
 
 ##### Расширения для VS Code:
 
