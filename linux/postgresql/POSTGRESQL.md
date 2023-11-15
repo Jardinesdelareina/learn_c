@@ -14,4 +14,8 @@
 
 `sudo -u postgres psql`     подключение к серверу, активация оболочки <b>psql</b>
 
+`CREATE USER your_username WITH PASSWORD 'your_password';`      создание пользователя и пароля
+
+`GRANT ALL PRIVILEGES ON DATABASE your_database TO your_username;`      предоставление привелегий новому пользователю
+
 `\q`    выход из <b>psql</b><b>psql</b>
