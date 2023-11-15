@@ -1,5 +1,11 @@
 ### Установка и использование PostgreSQL в Linux
 
+<div>
+    <img src="https://github.com/devicons/devicon/blob/master/icons/postgresql/postgresql-original.svg" width="40" height="40"/>&nbsp;
+</div>
+
+
+
 `sudo apt install postgresql`   установка
 
 `sudo service postgresql status`    проверка, запущен ли сервис
