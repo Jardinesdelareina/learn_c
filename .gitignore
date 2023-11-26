@@ -1,4 +1,5 @@
 .vscode
 *.exe
 main
+main.o
 libcs50-11.0.2
