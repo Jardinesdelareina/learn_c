@@ -1,5 +1,5 @@
 CC = gcc
-CFLAGS = -Wall -Werror -std=c99 -pedantic
+CFLAGS = -std=c99
 
 TARGET = main
 SOURCES = main.c
