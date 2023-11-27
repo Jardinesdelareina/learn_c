@@ -2,21 +2,17 @@
 
 int main(void)
 {
-    int x = 10;
-    int* pt_x = &x;
+    int var_int = 10;
+    int* pt_int;
+    char* pt_char;
 
-    printf("pt_x: %p\n", pt_x);      // адрес указателя
-    printf("*pt_x: %d\n", *pt_x);    // содержимое указателя
-    printf("x: %d\n", x);            // значение переменной
-    printf("sizeof: %li\n", sizeof(*pt_x));
+    pt_int = &var_int;
+    pt_char = (char *)pt_int;           // приведение указателя к типу char
 
-    puts("<==============>");
+    *pt_char = 1;
 
-    *pt_x = 100;
-
-    printf("pt_x: %p\n", pt_x);      // адрес указателя
-    printf("*pt_x: %d\n", *pt_x);    // содержимое указателя
-    printf("x: %d\n", x);            // значение переменной
+    printf("pt_char: %d\n", *pt_char); 
+    printf("sizeof pt_char: %ld\n", sizeof(*pt_char));
 
     return 0;
 }
