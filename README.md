@@ -4,7 +4,17 @@
     <img src="https://github.com/devicons/devicon/blob/master/icons/c/c-original.svg" width="40" height="40"/>&nbsp;
 </div>
 
-<em>Данный репозиторий является конспектом [лекций Сергея Балакирева по языку C](https://www.youtube.com/playlist?list=PLA0M1Bcd0w8w-mqVmBjt-2J8Z1gVmPZVz).</em>
+<em>Данный репозиторий является конспектом самых разных источников:</em>
+
+
+[Лекции Сергея Балакирева по языку C](https://www.youtube.com/playlist?list=PLA0M1Bcd0w8w-mqVmBjt-2J8Z1gVmPZVz)
+
+
+[Курс по языку C для первого курса МФТИ Татьяны Дербышевой и Татьяны Овсянниковой](https://stepik.org/course/57680/syllabus)
+
+
+[CS50 (Гарвардский курс по основам программирования)](https://www.youtube.com/playlist?list=PLawfWYMUziZqyUL5QDLVbe3j5BKWj42E5)
+
 
 ### Установка в Windows
 
