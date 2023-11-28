@@ -2,17 +2,10 @@
 
 int main(void)
 {
-    int var_int = 10;
-    int* pt_int;
-    char* pt_char;
+    int x = 6678;
+    char* ptr_x = (char *)&x;
 
-    pt_int = &var_int;
-    pt_char = (char *)pt_int;           // приведение указателя к типу char
-
-    *pt_char = 1;
-
-    printf("pt_char: %d\n", *pt_char); 
-    printf("sizeof pt_char: %ld\n", sizeof(*pt_char));
-
+    for(int i = 0; i < sizeof(x); ++i)
+        printf("| %d |", *ptr_x++);
     return 0;
 }
