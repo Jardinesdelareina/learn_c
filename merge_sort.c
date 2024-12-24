@@ -98,4 +98,4 @@ int main() {
 }
 
 
-// gcc main.c -o main -Wall -Wextra -std=c99 -pedantic
+// gcc merge_sort.c -o merge_sort -Wall -Wextra -std=c99 -pedantic
