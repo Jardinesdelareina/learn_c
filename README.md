@@ -46,24 +46,17 @@
 
 Чтобы задать свое имя исполняемому файлу:
 
-> gcc main.c -o main -Wall -Wextra -std=c99 -pedantic
+> gcc main.c -o main -Wall -Wextra -std=c11 -pedantic
 
 * `-Wall` включает все стандартные предупреждения компилятора (предупреждения о неиспользуемых переменных, некорректных вызовах функций и тд.)
 * `-Wextra` включает дополнительные предупреждения (предупреждения о неиспользуемых аргументах функций, несоответствие типов указателей и тд.)
-* `-std=c99` указывает стандарт языка C
+* `-std=c11` указывает стандарт языка C
 * `-pedantic` активирует проверку на соответствие стандарту языка C
 
 ##### Расширения для VS Code:
 
 * <b>C/C++</b>
 * <b>Code Runner</b> (после установки программа компилируется нажатием <b>CTRL + Alt + N</b>)
-
-В .vscode/tasks.json в список args добавить "-std=c99", после этого программа запускается <b>CTRL + Shift + B</b>
-
-
-##### CS50
-
-[Стандартная библиотека языка C](https://manual.cs50.io/)
 
 
 ### Типы данных
@@ -158,8 +151,44 @@ printf("input = %d, value = %d\n", input, x);
 |`#ifdef`|Проверка на наличие макроимени в текущем модуле|
 |`#ifndef`|Проверка на отсутствие макроимени в текущем модуле|
 |`#elif`|Аналог else if, определение условия "иначе"|
-|`#elifdef`|Проверка на наличие макроимени в условном блоке "иначе"|
+|`#elifdef`|Проверка на наличие макроимени в условном блоке "иначе" (C23)|
 |`#elifndef`|Проверка на отсутствие макроимени в условном блоке "иначе"|
+
+```c
+#include <stdio.h>
+
+#define VERSION_MAJOR 1
+#define VERSION_MINOR 4
+#define DEBUG 1
+
+#if defined(__linux__)
+    #define PLATFORM "Linux"
+#elif defined(_WIN32)
+    #define PLATFORM "Windows"
+#elif defined(__APPLE__)
+    #define PLATFORM "macOS"
+#else
+    #define PLATFORM "Unknown"
+#endif
+
+#if VERSION_MAJOR < 2
+    #if VERSION_MINOR < 5
+        #warning "Old version"
+    #endif
+#endif
+
+#if DEBUG
+    #define LOG(msg) fprintf(stderr, "[DEBUG] %s:%d: %s\n", __FILE__, __LINE__, msg)
+#else
+    #define LOG(msg) ((void)0)
+#endif
+
+int main(void) {
+    printf("App v%d.%d on %s\n", VERSION_MAJOR, VERSION_MINOR, PLATFORM);
+    LOG("started");
+    return 0;
+}
+```
 
 
 ### Цикл for
@@ -176,7 +205,7 @@ for (<em>инициализация</em>; <em>условие</em>; <em>обно�
 3. <b>обновление</b> - операция или изменение переменных, которые должны происходить на каждой итерации цикла. Этот блок выполняется после каждой итерации перед проверкой условия.
 
 ```c
-for(int value = 1000, value > 0, --value)
+for(int value = 1000; value > 0; --value)
     printf("%d", value);
 ```
 
